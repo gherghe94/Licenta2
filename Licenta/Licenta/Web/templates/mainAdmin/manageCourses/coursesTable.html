@@ -1,0 +1,39 @@
+﻿<div class="container">
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Is Optional ?</th>
+                    <th>Credits</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="course in view.Courses | orderBy : 'Name'">
+                    <td>
+                        {{$index+1}}
+                    </td>
+                    <td>
+                        {{course.Name}}
+                    </td>
+                    <td>
+                        {{course.Year}}
+                    </td>
+                    <td>
+                        <input class="form-control" type="checkbox" ng-model="course.IsOptional" ng-disabled="true" />
+                    </td>
+                    <td>
+                        {{course.Credits}}
+                    </td>
+                    <td>
+                        <button ng-click="editCourse(course)" class="btn btn-info action-buttons">Edit</button>
+                        <button ng-click="deleteCourse(course)" class="btn btn-danger action-buttons">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

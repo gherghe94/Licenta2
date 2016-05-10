@@ -1,0 +1,26 @@
+﻿<div ng-controller="groupsCtrl">
+    <div class="container">
+        <h3 class="row">Manage Groups</h3>
+    </div>
+    <div class="row" style="background-color:lightgray; border-radius: 15px">
+        <div class="row">
+            <div class="form-group col-xs-3" style="margin:10px">
+                <label>Name:</label>
+                <input class="form-control" ng-model="view.filter.Name" />
+            </div>
+            <div class="form-group col-xs-3" style="margin:10px">
+                <label>Year:</label>
+                <select class="form-control" ng-model="view.filter.Year" ng-options="opt for opt in view.yearOptions"/>
+            </div>
+            <div class="form-group col-xs-3" style="margin:10px">
+                <label>Specialization:</label>
+                <select class="form-control" ng-model="view.filter.Specialization" ng-options="opt for opt in view.specializationOptions" />
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-info col-xs-3" style="margin:30px" ng-click="search()">Search</button>
+            <button class="btn btn-info col-xs-3" style="margin:30px" ng-click="addGroup()">Add Group</button>
+        </div>
+    </div>
+    <div ng-include="'mainAdmin/manageGroups/groupsTable.html'"></div>
+</div>

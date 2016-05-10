@@ -1,0 +1,11 @@
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\Licenta.Services.dll
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\Licenta.Services.pdb
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\Licenta.DataLayer.SqlDb.dll
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\Licenta.Domain.dll
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\NPoco.dll
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\Licenta.DataLayer.SqlDb.pdb
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\Licenta.Domain.pdb
+D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\NPoco.pdb
+D:\Work\trunk\Licenta\Licenta.Services\obj\Debug\Licenta.Services.csprojResolveAssemblyReference.cache
+D:\Work\trunk\Licenta\Licenta.Services\obj\Debug\Licenta.Services.dll
+D:\Work\trunk\Licenta\Licenta.Services\obj\Debug\Licenta.Services.pdb

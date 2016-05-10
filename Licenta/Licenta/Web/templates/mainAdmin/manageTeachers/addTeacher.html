@@ -1,0 +1,44 @@
+﻿<div class="container">
+    <div class="modal-header">
+        <h3 class="modal-title">Adauga Profesor</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="form-group">
+                <label> First name : </label>
+                <input class="form-control" ng-model="teacher.FirstName" />
+            </div>
+            <div class="form-group">
+                <label> Last name : </label>
+                <input class="form-control" ng-model="teacher.LastName" />
+            </div>
+            <div class="form-group">
+                <label> Email: </label>
+                <input class="form-control" ng-model="teacher.Email" />
+            </div>
+            <div class="form-group">
+                <label> Title: </label>
+                <select class="form-control" ng-model="teacher.Title" ng-options="opt for opt in titleOptions"></select>
+            </div>
+            <div class="form-group">
+                <label> Notes: </label>
+                <input class="form-control" ng-model="teacher.Notes" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" ng-click="save()">Save</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            </div>
+            <div ng-if="successMessage" class="form-group">
+                <div class="alert alert-success">
+                    <strong>Success!</strong> {{successMessage}}
+                </div>
+            </div>
+            <div ng-if="errors" class="form-group">
+                <div class="alert alert-danger">
+                    <strong>Something went wrong!</strong> <br />
+                    <p ng-repeat="err in errors">{{err}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

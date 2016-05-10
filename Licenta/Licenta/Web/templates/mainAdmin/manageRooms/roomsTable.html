@@ -1,0 +1,31 @@
+﻿<div class="container">
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="room in view.Rooms | orderBy : 'Name'">
+                    <td>
+                        {{$index+1}}
+                    </td>
+                    <td>
+                        {{room.Name}}
+                    </td>
+                    <td>
+                        {{room.Location}}
+                    </td>
+                    <td>
+                        <button ng-click="editRoom(room)" class="btn btn-info action-buttons">Edit</button>
+                        <button ng-click="deleteRoom(room)" class="btn btn-danger action-buttons">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

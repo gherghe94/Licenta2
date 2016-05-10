@@ -1,0 +1,39 @@
+﻿<div ng-controller="myStudentProfileCtrl">
+    <h1> <i> {{view.student.FirstName}} {{view.student.LastName}}'s </i> Profile </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="../../../../Content/student.jpg" class="img-responsive" />
+            </div>
+            <div class="col-md-4">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">Group: {{view.student.Group.Specialization}} {{view.student.Group.Name}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">First name:</label>
+                        <input type="text" class="form-control" ng-disabled="true" ng-model="view.student.FirstName">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Last name:</label>
+                        <input type="text" class="form-control" ng-disabled="true" ng-model="view.student.LastName">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Email: (you will receive notifications on this email)</label>
+                        <input type="email" class="form-control" ng-model="view.student.Email">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="save()" class="btn btn-primary btn-block">Save</button>
+                        <br />
+                        <div ng-if="successMessage" class="well" style="background-color: lightgreen">
+                            <span class="text-success h3"> The student has been successfully updated ! </span>
+                        </div>
+                        <div ng-if="errorMessage" class="well" style="background-color: lightcoral">
+                            <span class="text-danger h3"> Something went wrong! Check server side ! </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

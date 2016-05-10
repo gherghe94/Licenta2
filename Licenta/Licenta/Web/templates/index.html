@@ -1,0 +1,98 @@
+﻿<html>
+<head>
+    <title>
+        Licenta
+    </title>
+    <!-- Libs -->
+    <script src="../../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../../Scripts/angular.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/angular-route.min.js"></script>
+    <script src="../angular-notifier.js"></script>
+    <script src="../../Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="../../Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+    <!-- App -->
+    <script src="../app.js"></script>
+
+    <!-- Services -->
+    <script src="../services/authService.js"></script>
+    <script src="../services/authInterceptorService.js"></script>
+    <script src="../services/indexService.js"></script>
+    <script src="../services/studentService.js"></script>
+    <script src="../services/mainAdminService.js"></script>
+    <script src="../services/groupService.js"></script>
+    <script src="../services/editStudentService.js"></script>
+    <script src="../services/roomsService.js"></script>
+    <script src="../services/coursesService.js"></script>
+    <script src="../services/teacherService.js"></script>
+    <script src="../services/hourService.js"></script>
+    <script src="../services/mainTeacherService.js"></script>
+    <script src="../services/teacherProfileService.js"></script>
+    <script src="../services/announcementService.js"></script>
+    <script src="../services/mainStudentService.js"></script>
+    <script src="../services/studentProfileService.js"></script>
+
+    <!-- Configs -->
+    <script src="../config.js"></script>
+
+    <!-- Directives -->
+    <script src="../directives/myModal.js"></script>
+
+    <!-- Controllers -->
+    <script src="../controllers/indexCtrl.js"></script>
+    <script src="../controllers/loginCtrl.js"></script>
+    <script src="../controllers/mainAdminCtrl.js"></script>
+    <script src="../controllers/students/studentCtrl.js"></script>
+    <script src="../controllers/teachers/teachersCtrl.js"></script>
+    <script src="../controllers/students/addStudentCtrl.js"></script>
+    <script src="../controllers/students/editStudentCtrl.js"></script>
+    <script src="../controllers/rooms/roomsCtrl.js"></script>
+    <script src="../controllers/groups/groupCtrl.js"></script>
+    <script src="../controllers/courses/coursesCtrl.js"></script>
+    <script src="../controllers/schedule/scheduleCtrl.js"></script>
+    <script src="../controllers/mainTeacherCtrl.js"></script>
+    <script src="../controllers/teachers/myProfileCtrl.js"></script>
+    <script src="../controllers/teachers/myTeacherHoursCtrl.js"></script>
+    <script src="../controllers/teachers/myAnnouncementsCtrl.js"></script>
+    <script src="../controllers/mainStudentCtrl.js"></script>
+    <script src="../controllers/students/myStudentProfileCtrl.js"></script>
+    <script src="../controllers/students/myStudentHoursCtrl.js"></script>
+    <script src="../controllers/students/myStudentAnnouncementsCtrl.js"></script>
+
+    <!-- CSS -->
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/Site.css" rel="stylesheet" />
+    <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../Content/angular-notifier.css" rel="stylesheet" />
+
+</head>
+<body ng-app="myApp">
+    <div ng-controller="IndexCtrl">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div ng-show="showLogOut()" class="pull-right" style="margin-right: 30px; margin-top:30px;">
+                <a ng-click="logOut()" class="btn btn-info">Log out!</a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <img src="../../Content/Logo.png" class="img-circle" ng-click="goHome()" />
+                        <span class="h3"> Universitatea Transilvania </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <modal id="errorModal" title="Informare" visible="showModal">
+            <div>
+                <span class="has-error">{{errorMessage}}</span>
+            </div>
+        </modal>
+
+        <div class="container">
+            <div ng-view></div>
+        </div>
+    </div>
+</body>
+</html>
+

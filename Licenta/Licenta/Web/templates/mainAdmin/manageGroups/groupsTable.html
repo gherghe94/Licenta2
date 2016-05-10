@@ -1,0 +1,35 @@
+﻿<div class="container">
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Specialization</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="group in view.Groups | orderBy : 'Name'">
+                    <td>
+                        {{$index+1}}
+                    </td>
+                    <td>
+                        {{group.Name}}
+                    </td>
+                    <td>
+                        {{group.Year}}
+                    </td>
+                    <td>
+                        {{group.Specialization}}
+                    </td>
+                    <td>
+                        <button ng-click="editGroup(group)" class="btn btn-info action-buttons">Edit</button>
+                        <button ng-click="deleteGroup(group)" class="btn btn-danger action-buttons">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

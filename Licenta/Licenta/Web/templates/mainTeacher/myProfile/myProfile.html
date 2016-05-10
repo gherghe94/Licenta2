@@ -1,0 +1,50 @@
+﻿<div ng-controller="myProfileCtrl">
+    <h1> <i> {{view.teacher.FirstName}} {{view.teacher.LastName}}'s </i> Profile </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="../../../../Content/teacher.png" class="img-responsive" />
+            </div>
+            <div class="col-md-4">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label" for="email">Title:</label>
+                        <input type="text" class="form-control" ng-disabled="true" ng-model="view.teacher.Title">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="pwd">First name:</label>
+                        <input type="text" class="form-control" ng-disabled="true" ng-model="view.teacher.FirstName">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Last name:</label>
+                        <input type="text" class="form-control" ng-disabled="true" ng-model="view.teacher.LastName">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Email:</label>
+                        <input type="email" class="form-control" ng-model="view.teacher.Email">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Notes (about me):</label>
+                        <textarea class="form-control" ng-model="view.teacher.Notes" rows="5" maxlength="200"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="save()" class="btn btn-primary btn-block">Save</button>
+                        <br />
+                        <div ng-if="successMessage" class="well" style="background-color: lightgreen">
+                            <span class="text-success h3"> The teacher has been successfully updated ! </span>
+                        </div>
+                        <div ng-if="errorMessage" class="well" style="background-color: lightcoral">
+                            <span class="text-danger h3"> Something went wrong! Check server side ! </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <p class="text-primary h3"> Materii predate: </p>
+                <ul ng-repeat="course in view.teachedCourses">
+                    <li class="h4"> {{course.Name}} </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

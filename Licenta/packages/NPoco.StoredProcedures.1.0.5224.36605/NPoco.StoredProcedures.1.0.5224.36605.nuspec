@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NPoco.StoredProcedures</id>
+    <version>1.0.5224.36605</version>
+    <title>NPoco.StoredProcedures</title>
+    <authors>Simon Colmer</authors>
+    <owners>Simon Colmer</owners>
+    <projectUrl>https://github.com/Workshop2/NPoco.StoredProcedures</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A fully tested wrapper class for querying stored procedures.</description>
+    <releaseNotes>Initial Release.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Npoco PetaPoco stored procedures tsql</tags>
+  </metadata>
+</package>

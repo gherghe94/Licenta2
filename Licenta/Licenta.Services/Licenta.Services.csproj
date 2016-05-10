@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5976DE7-ED81-4A13-B12B-3BB9EF1AC7ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Licenta.Services</RootNamespace>
+    <AssemblyName>Licenta.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmailSender.cs" />
+    <Compile Include="ForgottenPasswordEmailContent.cs" />
+    <Compile Include="IEmailContent.cs" />
+    <Compile Include="Implementation\AdminService.cs" />
+    <Compile Include="Implementation\AnnouncementService.cs" />
+    <Compile Include="Implementation\CourseService.cs" />
+    <Compile Include="Implementation\GroupService.cs" />
+    <Compile Include="Implementation\HourService.cs" />
+    <Compile Include="Implementation\RoomService.cs" />
+    <Compile Include="Implementation\Service.cs" />
+    <Compile Include="Implementation\StudentService.cs" />
+    <Compile Include="Implementation\TeacherCourseService.cs" />
+    <Compile Include="Implementation\TeacherService.cs" />
+    <Compile Include="Interfaces\IAccessGranter.cs" />
+    <Compile Include="Interfaces\IAdminService.cs" />
+    <Compile Include="Interfaces\IAnnouncementService.cs" />
+    <Compile Include="Interfaces\ICourseService.cs" />
+    <Compile Include="Interfaces\IGroupService.cs" />
+    <Compile Include="Interfaces\IHourService.cs" />
+    <Compile Include="Interfaces\IRoomService.cs" />
+    <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="Interfaces\IStudentService.cs" />
+    <Compile Include="Interfaces\ITeacherCourseService.cs" />
+    <Compile Include="Interfaces\ITeacherService.cs" />
+    <Compile Include="NotificationEmailContent.cs" />
+    <Compile Include="NotificationManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Licenta.DataLayer.SqlDb\Licenta.DataLayer.SqlDb.csproj">
+      <Project>{43c51fc0-ad8f-4e8b-9bf2-8cc9721ff52d}</Project>
+      <Name>Licenta.DataLayer.SqlDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Licenta.Domain\Licenta.Domain.csproj">
+      <Project>{a823673a-07a1-4e89-97d7-62d3d45119d1}</Project>
+      <Name>Licenta.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

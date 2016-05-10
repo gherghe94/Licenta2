@@ -1,0 +1,34 @@
+﻿<div ng-controller="studentCtrl">
+    <div class="container">
+        <h3 class="row">Manage Students</h3>
+    </div>
+
+    <div class="container" style="background-color:lightgray; border-radius: 15px">
+        <div class="row">
+            <div class="form-group col-xs-3" style="margin:10px">
+                <label>First name:</label>
+                <input class="form-control" ng-model="studentsFilter.FirstName" />
+            </div>
+
+            <div class="form-group col-xs-3" style="margin:10px">
+                <label>Last name:</label>
+                <input class="form-control" ng-model="studentsFilter.LastName" />
+            </div>
+
+            <div class="form-group col-xs-3" style="margin:10px">
+                <label>Group: </label>
+                <select class="form-control" ng-model="studentsFilter.GroupName">
+                    <option ng-repeat="group in view.Groups | orderBy : '-Year'"
+                            value="{{group.Name}}">
+                        {{group.Specialization}} {{group.Name}} | An: {{group.Year}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-info col-xs-3" style="margin:30px" ng-click="search()">Search</button>
+            <button class="btn btn-info col-xs-3" style="margin:30px" ng-click="addStudent()">Add student</button>
+        </div>
+    </div>
+    <div ng-include="'mainAdmin/manageStudents/studentsTable.html'"></div>
+</div>

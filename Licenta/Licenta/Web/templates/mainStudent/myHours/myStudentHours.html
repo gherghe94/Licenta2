@@ -1,0 +1,32 @@
+﻿<div ng-controller="myStudentHoursCtrl">
+    <div class="container">
+        <div class="row">
+            <h1> <i> {{view.student.FirstName}} {{view.student.LastName}}'s </i> Hours </h1>
+        </div>
+        <div ng-repeat="day in view.schedule" class="row">
+            <div class="row" style="background-color: lightblue; border-radius: 5px;">
+                <span class="text-info h3 pull-left">
+                    {{day.Day}}
+                </span>
+            </div>
+            <div ng-repeat="hour in day.Hours" ng-if="day.Hours.length > 0">
+                <div class="well col-xs-3">
+                    <p class="text-info h4">Interval: <strong>{{hour.TheHour}} </strong></p>
+                    <p class="text-info h4">Course: <strong> {{hour.Course.Name}} </strong></p>
+                    <p class="text-info h4">Teacher: <strong> {{hour.Teacher.FullName}} </strong></p>
+                    <p class="text-info h4">Room: <strong> {{hour.Room.Name}} </strong></p>
+                    <p class="text-info h4">Hour type: <strong> {{hour.TypeOfHour}} </strong></p>
+                    <p class="text-info h4">Week: <strong> {{hour.WhichWeek}} </strong></p>
+                    <button class="btn btn-primary btn-block"> View Details </button>
+                </div>
+            </div>
+            <div ng-if="!day.Hours || day.Hours.length == 0">
+                <div class="well col-xs-12">
+                    <span class="h3">
+                        No hours for {{day.Day}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿<div class="container">
+    <div class="modal-header">
+        <h3 class="modal-title">Adauga Materie</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="form-group">
+                <label> Name : </label>
+                <input class="form-control" ng-model="course.Name" />
+            </div>
+            <div class="form-group">
+                <label> Year : </label>
+                <select class="form-control" ng-model="course.Year" ng-options="opt for opt in yearOptions"></select>
+            </div>
+            <div class="form-group">
+                <label> Is Optional : </label>
+                <input class="form-control" type="checkbox" ng-model="course.IsOptional" />
+            </div>
+            <div class="form-group">
+                <label> Credits : </label>
+                <select class="form-control" ng-model="course.Credits" ng-options="opt for opt in creditsOptions"></select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" ng-click="save()">Save</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            </div>
+            <div ng-if="successMessage" class="form-group">
+                <div class="alert alert-success">
+                    <strong>Success!</strong> {{successMessage}}
+                </div>
+            </div>
+            <div ng-if="errors" class="form-group">
+                <div class="alert alert-danger">
+                    <strong>Something went wrong!</strong> <br />
+                    <p ng-repeat="err in errors">{{err}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

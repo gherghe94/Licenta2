@@ -1,0 +1,10 @@
+﻿<br /><br />
+<h2 class="text-primary"> Hello, {{view.student.FirstName}} {{view.student.LastName}}!</h2>
+<div class="container">
+    <div class="row" style="background-color:lightgray; border-radius:10px; padding-left: 10px; padding-right: 10px;">
+        <span ng-repeat="tab in tabs track by $index" class="btn alert-info col-md-4" ng-click="changeTab(tab)">
+            <span class="h3">{{tab.Name}}</span>
+        </span>
+    </div>
+    <div ng-include="currentTab.Location" class="row"></div>
+</div>

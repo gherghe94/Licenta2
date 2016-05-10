@@ -1,0 +1,45 @@
+﻿<div ng-controller="scheduleCtrl">
+    <div class="container">
+        <h3 class="row">Manage Schedule</h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="group in view.Groups" class="col-md-2">
+                <span ng-click="showSchedule(group)" class="btn btn-block" style="background-color: lightblue; margin: 10px;">
+                    {{group.Specialization}} {{group.Name}}
+                </span>
+            </div>
+        </div>
+        <div class="row" ng-if="currentGroup">
+            <div class="col-md-12">
+                <div class="text-primary">
+                    <span class="h3">Managing schedule for:</span> <br />
+                    <span class="h3"> {{currentGroup.Specialization}} {{currentGroup.Name}} </span>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="day in view.currentSchedule" class="row" style="margin: 10px; width: 100%;">
+            <div class="row">
+                <span class="text-info h3">{{day.TheDay}}</span>
+            </div>
+            <div ng-repeat="hour in day.Hours">
+                <div class="col-md-2 cardiles" ng-show="!hour.IsPlaceholder">
+                    <div class="well">
+                        <div class="h5">{{hour.TheHour}}</div>
+                        <div class="h5">{{hour.Course.Name}}</div>
+                        <div class="h5">{{hour.Room.Name}}</div>
+                        <div class="h5">{{hour.Teacher.FullName}}</div>
+                        <div class="h5">{{hour.WhichWeek}}</div>
+                        <div class="h5">{{hour.TypeOfHour}}</div>
+                    </div>
+                    <div class="btn btn-primary" style="width: 100%" ng-click="editHour(hour)"> Edit </div>
+                    <div class="btn btn-danger" style="width: 100%" ng-click="deleteHour(hour)"> Delete </div>
+                </div>
+                <div ng-show="hour.IsPlaceholder" class="col-md-1 cardiles">
+                    <div class="h5">{{hour.TheHour}}</div>
+                    <div class="btn btn-primary btn-block" ng-click="addHour(hour)"> Add Hour </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

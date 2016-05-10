@@ -1,0 +1,40 @@
+﻿<div class="container">
+    <div class="modal-header">
+        <h3 class="modal-title">Add Announcement</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="form-group">
+                <label> Group: </label>
+                <select class="form-control" ng-options="(group.Specialization + ' ' + group.Name) for group in Groups" ng-model="announcement.Group"></select>
+            </div>
+            <div class="form-group">
+                <label> Description: </label>
+                <textarea class="form-control" rows="5" ng-model="announcement.Description" maxlength="300" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" ng-click="save()">Save</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            </div>
+            <div ng-if="!successMessage && !errors" class="form-group">
+                <div class="alert alert-info">
+                    <strong>A new announcement* </strong> will send each group student a mail with the notification !
+                    <div ng-if="loading">
+                        <strong> We are sending the emails please be patient! ...</strong>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="successMessage" class="form-group">
+                <div class="alert alert-success">
+                    <strong>Success!</strong> {{successMessage}}
+                </div>
+            </div>
+            <div ng-if="errors" class="form-group">
+                <div class="alert alert-danger">
+                    <strong>Something went wrong!</strong> <br />
+                    <p ng-repeat="err in errors">{{err}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
