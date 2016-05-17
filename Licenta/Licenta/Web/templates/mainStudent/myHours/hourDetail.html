@@ -1,0 +1,49 @@
+﻿<div class="container">
+    <div class="modal-header">
+        <h3 class="modal-title">Hour details</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="form-group">
+                <label> Interval : </label>
+                <input class="form-control" ng-model="hour.TheHour" ng-disabled="true" />
+            </div>
+            <div class="form-group">
+                <label> Day : </label>
+                <input class="form-control" ng-model="hour.TheDay" ng-disabled="true" />
+            </div>
+            <div class="form-group">
+                <label> Where : </label>
+                <input class="form-control" ng-model="hour.Room.Name" ng-disabled="true" />
+                <input class="form-control" ng-model="hour.Room.Location" ng-disabled="true" />
+            </div>
+            <div class="form-group">
+                <label> Teacher : </label>
+                <input class="form-control" ng-model="hour.Teacher.FullName" ng-disabled="true" />
+            </div>
+            <div class="form-group">
+                <label> Type of hour : </label>
+                <input class="form-control" ng-model="hour.TypeOfHour" ng-disabled="true" />
+            </div>
+            <div class="form-group">
+                <label> In which week : </label>
+                <input class="form-control" ng-model="hour.WhichWeek" ng-disabled="true" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger btn-block" ng-click="cancel()"> Cancel </button>
+            </div>
+            <div ng-if="successMessage" class="form-group">
+                <div class="alert alert-success">
+                    <strong>Success!</strong> {{successMessage}}
+                </div>
+            </div>
+            <div ng-if="errors" class="form-group">
+                <div class="alert alert-danger">
+                    <strong>Something went wrong!</strong> <br />
+                    <p ng-repeat="err in errors">{{err}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

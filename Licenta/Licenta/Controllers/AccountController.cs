@@ -2,6 +2,7 @@
 using Licenta.Filters;
 using Licenta.Models.DTO;
 using Licenta.Models.DTO.ResponseDto;
+using Licenta.Services;
 using Licenta.Services.Implementation;
 using Licenta.Services.Interfaces;
 using System;
@@ -75,6 +76,50 @@ namespace Licenta.Controllers
                         return Ok();
                     }
             }
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        public IHttpActionResult RecoverPassword([FromBody] UsernameDto uName)
+        {
+            try
+            {
+                var username = uName.username;
+                int dots = username.Count(w => w == '.');
+                if (dots < 1 || dots > 2)
+                    return Ok(new { Error = "Bad Formatting!", IsOk = false });
+
+                SendToTeacher(dots, username);
+                SendToStudent(dots, username);
+
+                return Ok(new { IsOk = true });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        private void SendToStudent(int dots, string username)
+        {
+            if (dots != 1)
+                return;
+
+            IStudentService studentService = new StudentService();
+            var student = studentService.GetStudentByUsername(username);
+            if (student != null)
+                NotificationManager.SendPassword(student);
+        }
+
+        private void SendToTeacher(int dots, string username)
+        {
+            if (dots != 2)
+                return;
+
+            ITeacherService teacherService = new TeacherService();
+            var teacher = teacherService.GetLoggedTeacher(username);
+            if (teacher != null)
+                NotificationManager.SendPassword(teacher);
         }
     }
 }

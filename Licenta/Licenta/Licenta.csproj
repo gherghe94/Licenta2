@@ -168,6 +168,7 @@
     <Compile Include="Models\DTO\ResponseDto\LoginResponse.cs" />
     <Compile Include="Models\DTO\AddStudentDto.cs" />
     <Compile Include="Models\DTO\TestDto.cs" />
+    <Compile Include="Models\DTO\UsernameDto.cs" />
     <Compile Include="Models\DTO\WebValidators\AnnouncementValidator.cs" />
     <Compile Include="Models\DTO\WebValidators\CourseValidator.cs" />
     <Compile Include="Models\DTO\WebValidators\GroupValidator.cs" />
@@ -996,8 +997,6 @@
     <Content Include="Web\controllers\mainTeacherCtrl.js" />
     <Content Include="Web\controllers\rooms\roomsCtrl.js" />
     <Content Include="Web\controllers\schedule\scheduleCtrl.js" />
-    <Content Include="Web\controllers\students\addStudentCtrl.js" />
-    <Content Include="Web\controllers\students\editStudentCtrl.js" />
     <Content Include="Web\controllers\students\myStudentAnnouncementsCtrl.js" />
     <Content Include="Web\controllers\students\myStudentHoursCtrl.js" />
     <Content Include="Web\controllers\students\myStudentProfileCtrl.js" />
@@ -1038,6 +1037,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Web\templates\login\about.html" />
+    <Content Include="Web\templates\login\forgotPasswordModal.html" />
     <Content Include="Web\templates\login\login.html" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -1061,7 +1061,6 @@
     <Content Include="Web\templates\mainAdmin\manageSchedule\deleteHourModal.html" />
     <Content Include="Web\templates\mainAdmin\manageSchedule\manageSchedule.html" />
     <Content Include="Web\templates\mainAdmin\manageStudents\addStudent.html" />
-    <Content Include="Web\templates\mainAdmin\manageStudents\editStudent.html" />
     <Content Include="Web\templates\mainAdmin\manageStudents\manageStudents.html" />
     <Content Include="Web\templates\mainAdmin\manageStudents\removeStudentModal.html" />
     <Content Include="Web\templates\mainAdmin\manageStudents\studentsTable.html" />
@@ -1071,6 +1070,7 @@
     <Content Include="Web\templates\mainAdmin\manageTeachers\removeTeacherModal.html" />
     <Content Include="Web\templates\mainAdmin\manageTeachers\teachersTable.html" />
     <Content Include="Web\templates\mainStudent\mainStudent.html" />
+    <Content Include="Web\templates\mainStudent\myHours\hourDetail.html" />
     <Content Include="Web\templates\mainStudent\myHours\myStudentHours.html" />
     <Content Include="Web\templates\mainStudent\myProfile\myStudentProfile.html" />
     <Content Include="Web\templates\mainStudent\myStudentAnnouncements\myStudentAnnouncements.html" />

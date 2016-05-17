@@ -7,7 +7,13 @@
                 method: "GET",
                 //headers: { Authorization: "Basic YW5kcmVpOjEyMzQ=" }
             })
-        }
-
+        },
+        recoverPassword: function (username) {
+            return $http({
+                url: "/api/Account/RecoverPassword",
+                method: "PUT",
+                data: { "username": username }
+            })
+        },
     }
 });

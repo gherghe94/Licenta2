@@ -38,22 +38,78 @@
         getStudents();
     };
 
-    //TODO: here add / edit functionalities. to be managed in the same way
-    $scope.addStudent = function () {
+    var openModal = function (model) {
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'mainAdmin/manageStudents/addStudent.html',
+            controller: function ($uibModalInstance, $scope, items) {
+                $scope.cancel = function () {
+                    $uibModalInstance.dismiss('cancel');
+                    items.refresh();
+                };
+
+                $scope.save = function () {
+                    $scope.view.Groups.forEach(function (item, index) {
+                        if (item.Id == $scope.student.Group.Id) {
+                            $scope.student.GroupId = item.Id;
+                        }
+                    });
+
+                    items.restService.updateStudent($scope.student).success(function (data) {
+                        if (data.IsOk) {
+                            $scope.successMessage = 'The student has been saved!';
+                            $scope.errors = null;
+                        } else {
+                            $scope.errors = data.Errors;
+                            $scope.successMessage = null;
+                        }
+                    }).error(function (data) {
+                        console.log(data);
+                    });
+                };
+
+                var initStudentGroup = function () {
+                    $scope.view.Groups.forEach(function (item, index) {
+                        if (item.Id == $scope.student.GroupId) {
+                            $scope.student.Group = item;
+                        }
+                    });
+                };
+
+                var initGroups = function () {
+                    items.groupRestService.getAllGroups({}).success(function (data) {
+                        $scope.view.Groups = data;
+                        initStudentGroup();
+                    }).error(function (data) {
+                        console.log(data);
+                    });
+                };
+
+                var init = function () {
+                    $scope.view = {};
+                    $scope.student = items.studentModel;
+                    initGroups();
+                };
+
+                init();
+            },
+            resolve: {
+                items: {
+                    refresh: $scope.search,
+                    restService: studentService,
+                    groupRestService: groupService,
+                    studentModel: model
+                }
+            }
         });
     };
 
-    $scope.editStudent = function (tStudent) {
-        editStudentService.registerGroups($scope.view.Groups);
-        editStudentService.register(tStudent);
+    $scope.addStudent = function () {
+        openModal({});
+    };
 
-        var modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: 'mainAdmin/manageStudents/editStudent.html',
-        });
+    $scope.editStudent = function (tStudent) {
+        openModal(tStudent);
     };
 
     $scope.removeStudent = function (tStudent) {

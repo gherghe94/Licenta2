@@ -12,9 +12,6 @@ namespace Licenta.Models.DTO.WebValidators
         {
             WebValidatorResult webValidatorResult = new WebValidatorResult();
 
-            if (entity.Id < 1)
-                webValidatorResult.Append("Entity has been detached!");
-
             if (string.IsNullOrWhiteSpace(entity.FirstName))
                 webValidatorResult.Append("First name cannot be empty!");
 

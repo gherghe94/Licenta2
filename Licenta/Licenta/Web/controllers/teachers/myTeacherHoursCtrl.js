@@ -8,8 +8,12 @@
             }
         });
 
-        todayHours.sort(function (h1, h2) {
-            return h1.TheHour - h2.TheHour;
+        todayHours.sort(function (a, b) {
+            if (a.TheHour > b.TheHour)
+                return 1;
+            if (a.TheHour == b.TheHour)
+                return 0;
+            return -1;
         });
 
         return todayHours;

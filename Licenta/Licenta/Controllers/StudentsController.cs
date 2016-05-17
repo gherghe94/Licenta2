@@ -50,6 +50,15 @@ namespace Licenta.Controllers
             }
         }
 
+        private void DecorateStudent(Student entity)
+        {
+            if (entity.Id == 0)
+            {
+                entity.Password = Student.GeneratePassword();
+                entity.Username = Student.GenerateUsername(entity.FirstName, entity.LastName);
+            }
+        }
+
         [HttpPut]
         public IHttpActionResult EditStudent([FromBody] Student entity)
         {
@@ -62,6 +71,7 @@ namespace Licenta.Controllers
                     return Ok(validationResult);
                 }
 
+                DecorateStudent(entity);
                 validationResult.IsOk = studentService.Save(entity);
 
                 return Ok(validationResult);

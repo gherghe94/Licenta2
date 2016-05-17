@@ -26,7 +26,13 @@
     var constructHours = function (day, hours) {
         var intervals = ["08:00-9:50", "10:00-11:50", "12:00-13:50", "14:00-15:50", "16:00-17:50", "18:00-19:50", "20:00-21:50"];
         var hoursInDay = getHoursToday(day, hours);
-        hoursInDay.sort(function (a, b) { return a.TheHour - b.TheHour; });
+        hoursInDay.sort(function (a, b) {
+            if (a.TheHour > b.TheHour)
+                return 1;
+            if (a.TheHour == b.TheHour)
+                return 0;
+            return -1;
+        });
 
         var result = [];
 

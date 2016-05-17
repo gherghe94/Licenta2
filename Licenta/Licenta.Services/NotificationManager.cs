@@ -51,5 +51,38 @@ namespace Licenta.Services
         }
 
         #endregion Announcement Notification
+
+        public static void SendPassword(Student stud)
+        {
+            try
+            {
+                IEmailContent content = new ForgottenPasswordEmailContent(string.Format("{0} {1}", stud.FirstName, stud.LastName), stud.Username, stud.Password);
+                EmailSender eSender = new EmailSender(stud.Email, content);
+                eSender.Send();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        public static void SendPassword(Teacher teacher)
+        {
+            try
+            {
+                IEmailContent content = new ForgottenPasswordEmailContent(
+                    teacher.FullName, 
+                    string.Format("{0}.{1}", teacher.Title, teacher.Username),
+                    teacher.Password);
+
+                EmailSender eSender = new EmailSender(teacher.Email, content);
+
+                eSender.Send();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
     }
 }

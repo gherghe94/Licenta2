@@ -1,4 +1,4 @@
-﻿myApp.controller('myStudentHoursCtrl', ['$scope', 'studentService', function ($scope, studentService) {
+﻿myApp.controller('myStudentHoursCtrl', ['$scope', 'studentService', '$uibModal', function ($scope, studentService, $uibModal) {
     var getHoursFrom = function (day, hours) {
         var todayHours = [];
         hours.forEach(function (item, index) {
@@ -7,8 +7,12 @@
             }
         });
 
-        todayHours.sort(function (h1, h2) {
-            return h1.TheHour - h2.TheHour;
+        todayHours.sort(function (a, b) {
+            if (a.TheHour > b.TheHour)
+                return 1;
+            if (a.TheHour == b.TheHour)
+                return 0;
+            return -1;
         });
 
         return todayHours;
@@ -38,4 +42,38 @@
     };
 
     init();
+
+    $scope.viewDetails = function (hour) {
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'mainStudent/myHours/hourDetail.html',
+            controller: function ($uibModalInstance, $scope, items) {
+                var getEqualEntity = function (entity, responseArray) {
+                    for (var idx = 0; idx < responseArray.length; idx++) {
+                        if (entity.Id === responseArray[idx].Id) {
+                            return responseArray[idx];
+                        }
+                    }
+
+                    return null;
+                };
+
+                $scope.cancel = function () {
+                    $uibModalInstance.dismiss('cancel');
+                };
+
+                var modalInit = function () {
+                    $scope.hour = items.hourModel;
+                };
+
+                modalInit();
+            },
+            resolve: {
+                items: {
+                    hourModel: hour,
+                }
+            }
+        });
+    };
+
 }]);
