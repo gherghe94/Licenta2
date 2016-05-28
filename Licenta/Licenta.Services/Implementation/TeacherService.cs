@@ -67,9 +67,9 @@ namespace Licenta.Services.Implementation
             var splitted = usernameWithTitle.Split('.');
             if (splitted.Length > 2)
             {
-                string title = usernameWithTitle.Split('.')[0];
-                string firstName = usernameWithTitle.Split('.')[1];
-                string lastName = usernameWithTitle.Split('.')[2];
+                string title = usernameWithTitle.Split('.')[0].ToLower();
+                string firstName = usernameWithTitle.Split('.')[1].ToLower();
+                string lastName = usernameWithTitle.Split('.')[2].ToLower();
 
                 string uName = string.Format("{0}.{1}", firstName, lastName);
 
