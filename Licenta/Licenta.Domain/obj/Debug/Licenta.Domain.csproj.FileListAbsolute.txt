@@ -4,4 +4,3 @@ D:\Work\trunk\Licenta\Licenta.Domain\bin\Debug\NPoco.dll
 D:\Work\trunk\Licenta\Licenta.Domain\bin\Debug\NPoco.pdb
 D:\Work\trunk\Licenta\Licenta.Domain\obj\Debug\Licenta.Domain.dll
 D:\Work\trunk\Licenta\Licenta.Domain\obj\Debug\Licenta.Domain.pdb
-D:\Work\trunk\Licenta\Licenta.Domain\obj\Debug\Licenta.Domain.csprojResolveAssemblyReference.cache

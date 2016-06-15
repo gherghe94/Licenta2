@@ -2,6 +2,8 @@
     var openModal = function (announcement) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainTeacher/myAnnouncements/addAnnouncement.html',
             controller: function ($uibModalInstance, $scope, items) {
                 var fillAnnouncement = function (entity) {

@@ -41,6 +41,8 @@
     var openModal = function (model) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageStudents/addStudent.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {
@@ -115,6 +117,8 @@
     $scope.removeStudent = function (tStudent) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageStudents/removeStudentModal.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {

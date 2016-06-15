@@ -85,6 +85,8 @@
     var openModal = function (hour) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageSchedule/addHour.html',
             controller: function ($uibModalInstance, $scope, items) {
                 var getEqualEntity = function (entity, responseArray) {
@@ -194,6 +196,8 @@
     $scope.deleteHour = function (hour) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageSchedule/deleteHourModal.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {

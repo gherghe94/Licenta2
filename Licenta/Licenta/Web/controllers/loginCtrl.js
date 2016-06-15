@@ -29,6 +29,8 @@
     $scope.forgotPassword = function () {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'login/forgotPasswordModal.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {

@@ -46,6 +46,8 @@
     $scope.viewDetails = function (hour) {
         $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainStudent/myHours/hourDetail.html',
             controller: function ($uibModalInstance, $scope, items) {
                 var getEqualEntity = function (entity, responseArray) {

@@ -2,6 +2,8 @@
     var openModal = function (model) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageGroups/addGroup.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {
@@ -61,6 +63,8 @@
     $scope.deleteGroup = function (group) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageGroups/removeGroupModal.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {

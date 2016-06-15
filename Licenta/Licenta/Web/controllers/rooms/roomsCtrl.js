@@ -4,6 +4,8 @@
     var openModal = function (model) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageRooms/addRoom.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {
@@ -61,6 +63,8 @@
     $scope.deleteRoom = function (room) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageRooms/removeRoomModal.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {

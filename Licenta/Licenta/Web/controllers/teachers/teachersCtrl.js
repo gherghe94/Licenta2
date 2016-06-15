@@ -2,6 +2,8 @@
     var openModal = function (model) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageTeachers/addTeacher.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {
@@ -51,6 +53,8 @@
     $scope.removeTeacher = function (teacher) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageTeachers/removeTeacherModal.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {
@@ -83,6 +87,8 @@
     $scope.editCourses = function (teacher) {
         var modalInstance = $uibModal.open({
             animation: true,
+            backdrop: 'static',
+            keyboard: false,
             templateUrl: 'mainAdmin/manageTeachers/addCoursesToTeacher.html',
             controller: function ($uibModalInstance, $scope, items) {
                 $scope.cancel = function () {

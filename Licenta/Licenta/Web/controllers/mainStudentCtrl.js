@@ -14,6 +14,7 @@
         var auth = authService.authentication;
         mainStudentService.getLoggedStudent(auth.userName, auth.userType).success(function (data) {
             $scope.view.student = data;
+            $scope.changeTab($scope.tabs[1]); // hours
         }).error(function (data) {
             console.log(data);
         });
@@ -22,6 +23,7 @@
     var initBarItems = function () {
         mainStudentService.getBarItems().success(function (data) {
             $scope.tabs = data;
+            initStudent();
         }).error(function (reason) {
             console.log(reason);
         });
@@ -29,7 +31,6 @@
 
     var init = function () {
         initView();
-        initStudent();
         initBarItems();
     };
 
