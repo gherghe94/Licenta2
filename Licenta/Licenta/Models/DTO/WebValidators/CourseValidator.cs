@@ -35,7 +35,27 @@ namespace Licenta.Models.DTO.WebValidators
             if (entity.Credits <= 0 || entity.Credits > 6)
                 result.Append("Credits has to be in 1-6 range!");
 
+            if (!IsUnique(entity) && IsNew(entity))
+                result.Append("Course is not unique! There is already a course named like this: " + entity.Name);
+
             return result;
+        }
+
+        private bool IsNew(Course entity)
+        {
+            return entity.Id == 0;
+        }
+
+        private bool IsUnique(Course entity)
+        {
+            var allCourses = _courseService.GetAll();
+            if (entity == null)
+                return true;
+
+            if (entity.Name == null)
+                return true;
+
+            return allCourses.All(c => c.Name.ToLower() != entity.Name.ToLower());
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿<div class="">
+﻿<div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="jumbotron">
-                <h3>Autentifica-te in site-ul nostru</h3>
-                <p>Introduce datele primite de la facultate pentru autentificare</p>
-                <p>Pentru autentificare in cazul elevului (nume.prenume) + parola</p>
-                <p>Pentru autentificare in cazul profesorului (titlu.nume.prenume) + parola</p>
+            <div class="jumbotron text-center">
+                <h3>Login</h3>
+                <p>To login you will have to introduce the username and password</p>
+                <p>If you are a student then you should login using forename.surname and password</p>
+                <p>If you are a teacher than you should login using title.forename.surname and password</p>
             </div>
         </div>
     </div>
@@ -14,17 +14,17 @@
             <form class="form-horizontal">
                 <div class="form-group">
                     <label class="form-label">Username</label>
-                    <input type="text" placeholder="Prenume.Nume ..." class="form-control" ng-model="loginData.Username">
+                    <input type="text" placeholder="Username ..." class="form-control" ng-model="loginData.Username">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Password</label>
-                    <input type="password" placeholder="Parola..." class="form-control" ng-model="loginData.Password">
+                    <input type="password" placeholder="Password..." class="form-control" ng-model="loginData.Password">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-info btn-block" ng-click="login()">Autentificare !</button>
+                    <button type="button" class="btn btn-info btn-block" ng-click="login()">Login !</button>
                 </div>
                 <div class="form-group text-center">
-                    <a class="form-label" ng-click="forgotPassword()">Ai uitat parola?!</a>
+                    <a class="form-label" ng-click="forgotPassword()">iForgot!</a>
                 </div>
             </form>
         </div>

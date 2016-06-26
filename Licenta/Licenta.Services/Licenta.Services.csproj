@@ -65,6 +65,7 @@
     <Compile Include="Interfaces\ITeacherService.cs" />
     <Compile Include="NotificationEmailContent.cs" />
     <Compile Include="NotificationManager.cs" />
+    <Compile Include="PasswordEmailContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

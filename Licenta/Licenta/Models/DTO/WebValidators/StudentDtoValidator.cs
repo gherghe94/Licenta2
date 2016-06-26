@@ -1,4 +1,5 @@
-﻿using Licenta.Domain.Models;
+﻿using Licenta.Domain.FilterDtos;
+using Licenta.Domain.Models;
 using Licenta.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,20 @@ namespace Licenta.Models.DTO.WebValidators
 
         private void CheckUniqueStudent(AddStudentDto entity, WebValidatorResult result)
         {
-            
             var foundStud = studentService.GetStudentByUsername(Student.GenerateUsername(entity.FirstName, entity.LastName));
             if (foundStud != null)
+            {
                 result.Append("The student already exists!");
+                return;
+            }
+
+            ////Check email
+            foundStud = studentService.GetByEmail(entity.Email);
+            if (foundStud != null)
+            {
+                result.Append("The student already exists!");
+                return;
+            }
         }
 
         public WebValidatorResult Validate(AddStudentDto entity)
@@ -54,6 +65,6 @@ namespace Licenta.Models.DTO.WebValidators
 
             return result;
         }
-       
+
     }
 }

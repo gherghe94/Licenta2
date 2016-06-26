@@ -1,4 +1,5 @@
 ﻿using Licenta.Domain.Models;
+using Licenta.Services.Implementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,29 @@ namespace Licenta.Models.DTO.WebValidators
             if (entity.GroupId < 1)
                 webValidatorResult.Append("Group cannot be empty!");
 
+            if (!IsUnique(entity) && IsNew(entity))
+                webValidatorResult.Append("It's not unique! Email must be unique also the name!");
+
             return webValidatorResult;
+        }
+
+        private bool IsNew(Student entity)
+        {
+            return entity.Id == 0;
+        }
+
+        private bool IsUnique(Student entity)
+        {
+            StudentService studentService = new StudentService();
+            var stud = studentService.GetByEmail(entity.Email);
+            if (stud != null)
+                return false;
+
+            stud = studentService.GetStudentByUsername(Student.GenerateUsername(entity.FirstName, entity.LastName));
+            if (stud != null)
+                return false;
+
+            return true;
         }
     }
 }

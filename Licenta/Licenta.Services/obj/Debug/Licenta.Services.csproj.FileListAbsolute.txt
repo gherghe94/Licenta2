@@ -9,3 +9,14 @@ D:\Work\trunk\Licenta\Licenta.Services\bin\Debug\NPoco.pdb
 D:\Work\trunk\Licenta\Licenta.Services\obj\Debug\Licenta.Services.csprojResolveAssemblyReference.cache
 D:\Work\trunk\Licenta\Licenta.Services\obj\Debug\Licenta.Services.dll
 D:\Work\trunk\Licenta\Licenta.Services\obj\Debug\Licenta.Services.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\Licenta.Services.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\Licenta.Services.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\Licenta.DataLayer.SqlDb.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\Licenta.Domain.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\NPoco.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\Licenta.DataLayer.SqlDb.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\Licenta.Domain.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\bin\Debug\NPoco.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\obj\Debug\Licenta.Services.csprojResolveAssemblyReference.cache
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\obj\Debug\Licenta.Services.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta.Services\obj\Debug\Licenta.Services.pdb

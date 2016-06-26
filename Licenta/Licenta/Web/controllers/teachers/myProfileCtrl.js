@@ -2,7 +2,6 @@
 
     var resolveServerMessage = function (res) {
         $scope.successMessage = res;
-        $scope.errorMessage = !res;
     }
 
     $scope.save = function () {

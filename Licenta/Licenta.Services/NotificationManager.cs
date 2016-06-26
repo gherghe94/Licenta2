@@ -52,6 +52,20 @@ namespace Licenta.Services
 
         #endregion Announcement Notification
 
+        public static void SendNewCommerNotification(Student stud)
+        {
+            try
+            {
+                IEmailContent content = new PasswordEmailContent(string.Format("{0} {1}", stud.FirstName, stud.LastName), stud.Username, stud.Password);
+                EmailSender eSender = new EmailSender(stud.Email, content);
+                eSender.Send();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
         public static void SendPassword(Student stud)
         {
             try

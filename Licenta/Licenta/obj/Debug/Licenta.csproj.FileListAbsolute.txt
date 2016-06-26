@@ -70,3 +70,43 @@ D:\Work\trunk\Licenta\Licenta\bin\Antlr3.Runtime.pdb
 D:\Work\trunk\Licenta\Licenta\obj\Debug\Licenta.csprojResolveAssemblyReference.cache
 D:\Work\trunk\Licenta\Licenta\obj\Debug\Licenta.dll
 D:\Work\trunk\Licenta\Licenta\obj\Debug\Licenta.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.dll.config
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Antlr3.Runtime.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.DataLayer.SqlDb.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.Domain.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.Services.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Microsoft.Web.Infrastructure.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Newtonsoft.Json.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\NPoco.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Net.Http.Formatting.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Helpers.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Http.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Http.WebHost.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Mvc.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Optimization.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Razor.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.WebPages.Deployment.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.WebPages.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.WebPages.Razor.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\WebGrease.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.DataLayer.SqlDb.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.Domain.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Licenta.Services.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\NPoco.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Newtonsoft.Json.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Net.Http.Formatting.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Helpers.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Http.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Http.WebHost.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Mvc.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Optimization.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.Razor.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.WebPages.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.WebPages.Deployment.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\System.Web.WebPages.Razor.xml
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\bin\Antlr3.Runtime.pdb
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\obj\Debug\Licenta.csprojResolveAssemblyReference.cache
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\obj\Debug\Licenta.dll
+D:\Licenta from Git\Licenta2-master\Licenta\Licenta\obj\Debug\Licenta.pdb

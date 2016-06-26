@@ -29,9 +29,6 @@ namespace Licenta.Models.DTO.WebValidators
             var allTeachers = _teacherService.GetAll();
             allTeachers.RemoveAll(t => t.Id == entity.Id);
 
-            if (allTeachers.Any(t => t.FirstName == entity.FirstName && t.LastName == entity.LastName))
-                webValidatorResult.Append("The teacher has to be unique (First name & Last name)!");
-
             if (string.IsNullOrWhiteSpace(entity.Title))
                 webValidatorResult.Append("Title cannot be empty!");
 
@@ -44,7 +41,29 @@ namespace Licenta.Models.DTO.WebValidators
             if (string.IsNullOrWhiteSpace(entity.Email))
                 webValidatorResult.Append("Email cannot be empty!");
 
+            if (!IsUnique(entity, allTeachers))
+                webValidatorResult.Append("Is not unique! Please search for a name, email combination that isn't already into the app!");
+
             return webValidatorResult;
+        }
+
+        private bool IsUnique(Teacher entity, List<Teacher> allTeachers)
+        {
+            if (entity == null)
+                return true;
+
+            if (entity.FirstName == null || entity.LastName == null || entity.Email == null)
+                return true;
+
+            bool nameCombination = allTeachers.Any(t =>
+                        t.FirstName.ToLower() == entity.FirstName.ToLower()
+                        && t.LastName.ToLower() == entity.LastName.ToLower());
+
+            bool isEmailUnique = allTeachers.Any(t => t.Email.ToLower() == entity.Email.ToLower());
+
+            if (nameCombination == true || isEmailUnique == true)
+                return false;
+            return true;
         }
     }
 }

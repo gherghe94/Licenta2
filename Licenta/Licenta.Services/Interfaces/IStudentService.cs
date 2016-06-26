@@ -12,5 +12,6 @@ namespace Licenta.Services.Interfaces
     {
         List<Student> GetStudentsByFilter(StudentsFilter filter);
         Student GetStudentByUsername(string username);
+        Student GetByEmail(string email);
     }
 }

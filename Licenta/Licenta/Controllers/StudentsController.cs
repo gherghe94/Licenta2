@@ -4,6 +4,7 @@ using Licenta.Domain.FilterDtos;
 using Licenta.Domain.Models;
 using Licenta.Models.DTO;
 using Licenta.Models.DTO.WebValidators;
+using Licenta.Services;
 using Licenta.Services.Implementation;
 using Licenta.Services.Interfaces;
 using System;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Licenta.Controllers
@@ -72,8 +74,8 @@ namespace Licenta.Controllers
                 }
 
                 DecorateStudent(entity);
+                SendPassword(entity);
                 validationResult.IsOk = studentService.Save(entity);
-
                 return Ok(validationResult);
             }
             catch (Exception ex)
@@ -81,6 +83,17 @@ namespace Licenta.Controllers
                 return BadRequest(ex.Message);
             }
 
+        }
+
+        private void SendPassword(Student entity)
+        {
+            if (entity.Id == 0)
+            {
+                var task = Task.Run(() =>
+                {
+                    NotificationManager.SendNewCommerNotification(entity);
+                });
+            }
         }
 
         [HttpDelete]

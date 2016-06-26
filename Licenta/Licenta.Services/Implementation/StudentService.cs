@@ -62,7 +62,15 @@ namespace Licenta.Services.Implementation
 
         public Student GetStudentByUsername(string username)
         {
+            username = username.ToLower(); //// the usernmae is always lowercase
             return repository.GetStudentByUsername(username);
+        }
+
+
+        public Student GetByEmail(string email)
+        {
+            var all = GetAll();
+            return all.FirstOrDefault(stud => stud.Email == email);
         }
     }
 }
